@@ -52,6 +52,7 @@ body {
   padding-right: 17px;
   max-width: 830px;
   width: 45%;
+  margin-right: 40px;
 }
 .input-search {
   /* Цвет фона прозрачный */
@@ -101,7 +102,7 @@ body {
 .sidebar {
   position: fixed;
   top: 114px;
-  width: 12%;
+  width: 230px;
   left: 0;
   height: calc(100% - 114px);
   overflow-y: auto;
@@ -151,9 +152,10 @@ body {
 /* Main  */
 .content {
   margin-top: 113px;
-  padding-left: 12.75%;
+  padding-left: 250px;
   width: 100%;
   height: 400px;
+  padding-right: 70px;
 }
 .channel {
   position: relative;
@@ -189,11 +191,8 @@ body {
 .channel-button {
   cursor: pointer;
 }
-.video-card {
-  width: 250px;
-}
 .video-thumb {
-  width: 250px;
+  width: 100%;
   height: 150px;
   /* Будет обрезаться, если вываливается что-то за пределы */
   overflow: hidden;
@@ -201,8 +200,8 @@ body {
   position: relative;
 }
 .thumbnail {
-  width: 250px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .video-duration {
@@ -272,11 +271,9 @@ body {
 .recommended-slider {
   margin-top: 30px;
 }
-.recommended-slider .video-card {
-  width: 540px;
-}
+
 .recommended-slider .video-thumb {
-  width: 540px;
+  width: 100%;
   height: 250px;
   /* Будет обрезаться, если вываливается что-то за пределы */
   overflow: hidden;
@@ -284,7 +281,7 @@ body {
   position: relative;
 }
 .recommended-slider .thumbnail {
-  width: 540px;
+  width: 100%;
   height: 250px;
   object-fit: cover;
 }
@@ -315,4 +312,96 @@ body {
 }
 .subscribe-btn:hover {
   background: blue;
+}
+.mobile-sidebar {
+  display: none;
+}
+.mobile-search {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .icons {
+    display: none;
+  }
+  .user {
+    margin-left: auto;
+  }
+}
+@media (max-width: 624px) {
+  .mobile-search {
+    display: block;
+    margin-left: auto;
+  }
+  .user {
+    margin-left: 20px;
+  }
+  .input-group {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    opacity: 0;
+    width: 74%;
+    margin-left: 25px;
+
+    transition: top 0.2s;
+  }
+  /* input-group, которому присвоен класс is-open */
+  .input-group.is-open {
+    opacity: 1;
+    top: 20px;
+  }
+  .menu-button {
+    display: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
+  .content {
+    padding-left: 32px;
+  }
+  .slider-buttons {
+    display: none;
+  }
+  .swiper-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .swiper-slide {
+    margin-bottom: 30px;
+  }
+  .video-thumb {
+    height: 300px;
+  }
+  .mobile-sidebar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    z-index: 99;
+  }
+  .mobile-sidebar .nav-link {
+    display: flex;
+    flex-direction: column;
+  }
+  .mobile-sidebar .nav-text {
+    margin-left: 0;
+    font-size: 10px;
+    line-height: 13px;
+  }
+  .mobile-sidebar .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 0;
+    padding-top: 13px;
+    padding-bottom: 11px;
+    border-top: 1px solid #f1f1f1;
+  }
+  .mobile-sidebar .nav-item {
+    margin-bottom: 0;
+  }
 }
